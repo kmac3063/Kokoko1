@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Vezdecode_Final_VK_10/static/js/main.04a0e958.chunk.js",
-    "main.js.map": "/Vezdecode_Final_VK_10/static/js/main.04a0e958.chunk.js.map",
+    "main.js": "/Vezdecode_Final_VK_10/static/js/main.5fc99e93.chunk.js",
+    "main.js.map": "/Vezdecode_Final_VK_10/static/js/main.5fc99e93.chunk.js.map",
     "runtime-main.js": "/Vezdecode_Final_VK_10/static/js/runtime-main.92f6149d.js",
     "runtime-main.js.map": "/Vezdecode_Final_VK_10/static/js/runtime-main.92f6149d.js.map",
     "static/css/2.cf5ef10e.chunk.css": "/Vezdecode_Final_VK_10/static/css/2.cf5ef10e.chunk.css",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.92f6149d.js",
     "static/css/2.cf5ef10e.chunk.css",
     "static/js/2.a3e54352.chunk.js",
-    "static/js/main.04a0e958.chunk.js"
+    "static/js/main.5fc99e93.chunk.js"
   ]
 }
