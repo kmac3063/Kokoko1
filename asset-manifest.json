@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/Vezdecode_Final_VK_10/static/js/main.f00a4db0.chunk.js",
-    "main.js.map": "/Vezdecode_Final_VK_10/static/js/main.f00a4db0.chunk.js.map",
+    "main.js": "/Vezdecode_Final_VK_10/static/js/main.525849fc.chunk.js",
+    "main.js.map": "/Vezdecode_Final_VK_10/static/js/main.525849fc.chunk.js.map",
     "runtime-main.js": "/Vezdecode_Final_VK_10/static/js/runtime-main.92f6149d.js",
     "runtime-main.js.map": "/Vezdecode_Final_VK_10/static/js/runtime-main.92f6149d.js.map",
     "static/css/2.cf5ef10e.chunk.css": "/Vezdecode_Final_VK_10/static/css/2.cf5ef10e.chunk.css",
-    "static/js/2.4900ed68.chunk.js": "/Vezdecode_Final_VK_10/static/js/2.4900ed68.chunk.js",
-    "static/js/2.4900ed68.chunk.js.map": "/Vezdecode_Final_VK_10/static/js/2.4900ed68.chunk.js.map",
+    "static/js/2.a3e54352.chunk.js": "/Vezdecode_Final_VK_10/static/js/2.a3e54352.chunk.js",
+    "static/js/2.a3e54352.chunk.js.map": "/Vezdecode_Final_VK_10/static/js/2.a3e54352.chunk.js.map",
     "index.html": "/Vezdecode_Final_VK_10/index.html",
     "static/css/2.cf5ef10e.chunk.css.map": "/Vezdecode_Final_VK_10/static/css/2.cf5ef10e.chunk.css.map",
-    "static/js/2.4900ed68.chunk.js.LICENSE.txt": "/Vezdecode_Final_VK_10/static/js/2.4900ed68.chunk.js.LICENSE.txt",
+    "static/js/2.a3e54352.chunk.js.LICENSE.txt": "/Vezdecode_Final_VK_10/static/js/2.a3e54352.chunk.js.LICENSE.txt",
     "static/media/persik.ae9f0072.png": "/Vezdecode_Final_VK_10/static/media/persik.ae9f0072.png"
   },
   "entrypoints": [
     "static/js/runtime-main.92f6149d.js",
     "static/css/2.cf5ef10e.chunk.css",
-    "static/js/2.4900ed68.chunk.js",
-    "static/js/main.f00a4db0.chunk.js"
+    "static/js/2.a3e54352.chunk.js",
+    "static/js/main.525849fc.chunk.js"
   ]
 }
