@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/Kokoko1/static/js/main.88954803.chunk.js",
-    "main.js.map": "/Kokoko1/static/js/main.88954803.chunk.js.map",
+    "main.js": "/Kokoko1/static/js/main.0a778d0c.chunk.js",
+    "main.js.map": "/Kokoko1/static/js/main.0a778d0c.chunk.js.map",
     "runtime-main.js": "/Kokoko1/static/js/runtime-main.52795f61.js",
     "runtime-main.js.map": "/Kokoko1/static/js/runtime-main.52795f61.js.map",
     "static/css/2.cf5ef10e.chunk.css": "/Kokoko1/static/css/2.cf5ef10e.chunk.css",
-    "static/js/2.00bc4d52.chunk.js": "/Kokoko1/static/js/2.00bc4d52.chunk.js",
-    "static/js/2.00bc4d52.chunk.js.map": "/Kokoko1/static/js/2.00bc4d52.chunk.js.map",
+    "static/js/2.14de4a58.chunk.js": "/Kokoko1/static/js/2.14de4a58.chunk.js",
+    "static/js/2.14de4a58.chunk.js.map": "/Kokoko1/static/js/2.14de4a58.chunk.js.map",
     "index.html": "/Kokoko1/index.html",
     "static/css/2.cf5ef10e.chunk.css.map": "/Kokoko1/static/css/2.cf5ef10e.chunk.css.map",
-    "static/js/2.00bc4d52.chunk.js.LICENSE.txt": "/Kokoko1/static/js/2.00bc4d52.chunk.js.LICENSE.txt",
+    "static/js/2.14de4a58.chunk.js.LICENSE.txt": "/Kokoko1/static/js/2.14de4a58.chunk.js.LICENSE.txt",
     "static/media/persik.ae9f0072.png": "/Kokoko1/static/media/persik.ae9f0072.png"
   },
   "entrypoints": [
     "static/js/runtime-main.52795f61.js",
     "static/css/2.cf5ef10e.chunk.css",
-    "static/js/2.00bc4d52.chunk.js",
-    "static/js/main.88954803.chunk.js"
+    "static/js/2.14de4a58.chunk.js",
+    "static/js/main.0a778d0c.chunk.js"
   ]
 }
