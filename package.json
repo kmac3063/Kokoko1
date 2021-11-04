@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://kmac3063.github.io/Vezdecode_Final_VK_10/",
+  "homepage": "https://kmac3063.github.io/Kokoko1/",
   "scripts": {
     "start": "cross-env PORT=10888 HTTPS=true react-scripts start",
     "build": "react-scripts build",

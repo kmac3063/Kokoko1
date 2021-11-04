@@ -19,7 +19,7 @@ const WelcomeScreen = ({id, fetchedUser, go}) => {
                     header={"Приветствуем, " + getName(fetchedUser) + "!"}
                     action={<Button size="m" onClick={go} data-to="Home">Перейти к QR кодам</Button>}
                 >
-                    Приложение разработано в рамках хакатона "Финал Вездекода 2021"
+                    Приложение разработано в рамках финала хакатона.
                 </Placeholder>
             </Group>
         </Panel>

@@ -13,17 +13,7 @@ import {
 } from '@vkontakte/vkui';
 
 const QRListScreen = ({id, go, fetchedUser, codeList, setCodeList}) => {
-    const onDragFinish = (from, to) => {
-        const draggingList = [...codeList];
-        draggingList.splice(from, 1);
-        draggingList.splice(to, 0, codeList[from]);
-        setCodeList(draggingList);
-    }
-
     const onRemove = (i) => {
-        console.log("onRemove id: " + i)
-        console.log("Before: " + codeList)
-        console.log("After: " + codeList.filter((code) => code.id !== i))
         setCodeList(codeList.filter((code) => code.id !== i))
     }
 

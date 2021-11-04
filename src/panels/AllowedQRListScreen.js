@@ -1,19 +1,6 @@
 import React from 'react';
 
-import {
-    Cell,
-    Group,
-    Header,
-    List,
-    MiniInfoCell,
-    Panel,
-    PanelHeader,
-    PanelHeaderBack,
-    platform,
-    Text,
-    VKCOM
-} from '@vkontakte/vkui';
-import {Icon20ArticleOutline} from "@vkontakte/icons";
+import {Cell, Group, Header, List, Panel, PanelHeader, PanelHeaderBack, platform, Text, VKCOM} from '@vkontakte/vkui';
 
 const AllowedQRListScreen = ({id, go, fetchedUser, codeList, allowedList}) => {
     const getAllowedList = () => {
@@ -22,7 +9,7 @@ const AllowedQRListScreen = ({id, go, fetchedUser, codeList, allowedList}) => {
         let res = []
         for (let code of codeList) {
             console.log("code: " + code.text)
-            console.log("codeType: " + typeof(code.text))
+            console.log("codeType: " + typeof (code.text))
             let b = false
             for (let allowedCode of allowedList) {
                 if (code.text.includes(allowedCode.text)) {
@@ -55,14 +42,15 @@ const AllowedQRListScreen = ({id, go, fetchedUser, codeList, allowedList}) => {
     }
 
     const getAllowedFormat = () => {
-        return allowedList.map((word, index) => "\"" + word.text + "\"" + (index === allowedList.length - 1 ? "" : ","))
+        return allowedList.map((word, index) => "\"" + word.text + "\"" + (index === allowedList.length - 1 ? "" : ", "))
     }
 
     return <Panel id={id}>
         <PanelHeader
             left={<PanelHeaderBack onClick={go} data-to={'Home'} label={platform === VKCOM ? 'Назад' : undefined}/>}
         >Разрешенные коды</PanelHeader>
-        <Cell multiline> Код считается разрешенным, если включает в себя одну из следующий строк: { getAllowedFormat() }</Cell>
+        <Cell multiline> Код считается разрешенным, если включает в себя одну из следующий
+            строк: {getAllowedFormat()}</Cell>
         <Text>
         </Text>
         <Group header={<Header>Разрешенные коды</Header>}>
