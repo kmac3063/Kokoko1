@@ -5,18 +5,9 @@ import {Icon28QrCodeOutline, Icon28ScanViewfinderOutline, Icon28StarsCircleFillV
 
 const Home = ({id, go, fetchedUser, showQRReader, codeList, logText, getText, fake, doGet}) => {
     return <Panel id={id}>
-        <PanelHeader>QR приложулька5</PanelHeader>
+        <PanelHeader>QR приложулька</PanelHeader>
 
-        <Cell multiline>Log: {logText}</Cell>
-
-        <Cell multiline>Get: {getText}</Cell>
-        {/*showQRReader*/}
-
-        <Cell onClick={doGet} before={<Icon28ScanViewfinderOutline/>}>
-            СДелать гет
-        </Cell>
-
-        <Cell onClick={fake} before={<Icon28ScanViewfinderOutline/>}>
+        <Cell onClick={showQRReader} before={<Icon28ScanViewfinderOutline/>}>
             Отсканировать QR код
         </Cell>
 

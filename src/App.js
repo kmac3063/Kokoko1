@@ -17,7 +17,7 @@ const App = (allowedList1 = allowedList) => {
     const [logText, setLogText] = useState("")
     const [getText, setGetText] = useState("")
 
-    const allowedList = [{text: "test", id: 4}, {text: "b", id: 5}, {text: "123", id: 6}]
+    const allowedList = [{text: ".org", id: 4}, {text: ".ru", id: 5}, {text: "aa", id: 6}]
 
     useEffect(() => {
         bridge.subscribe(({detail: {type, data}}) => {
@@ -30,7 +30,7 @@ const App = (allowedList1 = allowedList) => {
             }
 
             if (type === 'VKWebAppOpenCodeReaderResult') {
-                setCodeList([...codeList, {text: data.code_data, id: Math.random().toString()}])
+                setCodeList(codeList1 => [...codeList1, {text: data.code_data, id: Math.random().toString()}])
             }
         });
 
@@ -69,13 +69,13 @@ const App = (allowedList1 = allowedList) => {
     }, [codeList])
 
     const fake = () => {
-        setCodeList([...codeList, {text: "ASD", id: Math.random().toString()}])
+        // setCodeList([...codeList, {text: "ASD", id: Math.random().toString()}])
     }
 
     const doGet = () => {
-        bridge.send("VKWebAppStorageGet", {"keys": ["codeList"]}).then(data => {
-            setGetText(JSON.stringify(data))
-        });
+        // bridge.send("VKWebAppStorageGet", {"keys": ["codeList"]}).then(data => {
+        //     setGetText(JSON.stringify(data))
+        // });
     }
 
     const go = e => {
