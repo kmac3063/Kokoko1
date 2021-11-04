@@ -13,15 +13,14 @@ const App = (allowedList1 = allowedList) => {
     const [fetchedUser, setUser] = useState(null);
     const [popout, setPopout] = useState(<ScreenSpinner size='large'/>);
     const [scheme, setScheme] = useState(null)
-    const [codeList, setCodeList] = useState(
-        [{text: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', id: 1}, {text: 'BBB', id: 2}, {text: 'CCCC', id: 3}]
-    )
-    const [maxId, setMaxId] = useState(10)
+    const [codeList, setCodeList] = useState([])
+    const [maxId, setMaxId] = useState(0)
 
-    const allowedList = [{text:"test", id: 4}, {text:"база", id: 5}, {text:"123", id: 6}]
+    const allowedList = [{text: "test", id: 4}, {text: "b", id: 5}, {text: "123", id: 6}]
 
     useEffect(() => {
         bridge.subscribe(({detail: {type, data}}) => {
+            console.log("Type: " + type + ". Data: " + data)
             if (type === 'VKWebAppUpdateConfig') {
                 const schemeAttribute = document.createAttribute('scheme')
                 // schemeAttribute.value = data.scheme ? data.scheme : 'client_light';
@@ -29,8 +28,25 @@ const App = (allowedList1 = allowedList) => {
                 setScheme(schemeAttribute.value)
                 document.body.attributes.setNamedItem(schemeAttribute);
             }
+
+            if (type === 'VKWebAppStorageGetKeysFailed' || type === 'VKWebAppStorageGetFailed') {
+                bridge.send("VKWebAppStorageSet", {"key": "maxId", "value": "0"});
+                bridge.send("VKWebAppStorageSet", {"key": "codeList", "value": JSON.stringify([])});
+            }
+
+            if (type === "VKWebAppStorageGetKeysResult") {
+                bridge.send("VKWebAppStorageGet", {"keys": ["maxId", "codeList"]});
+            }
+
+            if (type === 'VKWebAppStorageGetResult') {
+                setMaxId(parseInt(data.keys.filter((p) => p.key === "maxId").value))
+                setCodeList(JSON.parse(data.keys.filter((p) => p.key === "codeList").value))
+            }
+
             if (type === 'VKWebAppOpenCodeReaderResult') {
-                console.log(data)
+                bridge.send("VKWebAppStorageSet", {"key": "maxId", "value": JSON.stringify(maxId)});
+                bridge.send("VKWebAppStorageSet", {"key": "codeList", "value": JSON.stringify(codeList)});
+
                 setCodeList([...codeList, {text: data.code_data, id: maxId}])
                 setMaxId(maxId + 1)
             }
@@ -40,6 +56,7 @@ const App = (allowedList1 = allowedList) => {
             setPopout(null);
             const user = await bridge.send('VKWebAppGetUserInfo');
             setUser(user);
+            bridge.send("VKWebAppStorageGetKeys", {"count": 2, "offset": 0});
         }
 
         fetchData();
@@ -58,7 +75,7 @@ const App = (allowedList1 = allowedList) => {
             <AppRoot>
                 <View activePanel={activePanel} popout={popout}>
                     <WelcomeScreen id='WelcomeScreen' fetchedUser={fetchedUser} go={go}/>
-                    <Home id='Home' fetchedUser={fetchedUser} go={go} showQRReader={showQRReader}/>
+                    <Home id='Home' fetchedUser={fetchedUser} go={go} showQRReader={showQRReader} codeList={codeList}/>
                     <QRListScreen id='QrList' fetchedUser={fetchedUser} go={go}
                                   codeList={codeList}
                                   setCodeList={setCodeList}/>

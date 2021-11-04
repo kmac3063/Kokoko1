@@ -1,9 +1,9 @@
 import React from 'react';
 
-import {Panel, PanelHeader, Separator, SimpleCell} from '@vkontakte/vkui';
+import {Cell, Counter, Panel, PanelHeader, Separator} from '@vkontakte/vkui';
 import {Icon28QrCodeOutline, Icon28ScanViewfinderOutline, Icon28StarsCircleFillViolet} from "@vkontakte/icons";
 
-const Home = ({id, go, fetchedUser, showQRReader}) => {
+const Home = ({id, go, fetchedUser, showQRReader, codeList}) => {
     const START_SIZE = 8
     /*
         const [bitsSize, setBitsSize] = useState(START_SIZE)
@@ -43,19 +43,20 @@ const Home = ({id, go, fetchedUser, showQRReader}) => {
     return <Panel id={id}>
         <PanelHeader>QR приложулька</PanelHeader>
 
-        <SimpleCell onClick={showQRReader} expandable before={<Icon28ScanViewfinderOutline/>}>
-            Отсканировать QR
-        </SimpleCell>
+        <Cell onClick={showQRReader} before={<Icon28ScanViewfinderOutline/>}>
+            Отсканировать QR код
+        </Cell>
 
-        <SimpleCell onClick={go} data-to='QrList' expandable before={<Icon28QrCodeOutline/>}>
+        <Cell onClick={go} data-to='QrList' expandable before={<Icon28QrCodeOutline/>}
+              indicator={<Counter mode="primary">{codeList.length}</Counter>}>
             Список отсканированных QR кодов
-        </SimpleCell>
+        </Cell>
 
         <Separator/>
 
-        <SimpleCell onClick={go} data-to='AllowedQrList' expandable before={<Icon28StarsCircleFillViolet/>}>
+        <Cell onClick={go} data-to='AllowedQrList' expandable before={<Icon28StarsCircleFillViolet/>}>
             Бонусное задание
-        </SimpleCell>
+        </Cell>
     </Panel>
 }
 

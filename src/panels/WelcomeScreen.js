@@ -5,10 +5,9 @@ import {Icon56UsersOutline} from "@vkontakte/icons";
 
 const WelcomeScreen = ({id, fetchedUser, go}) => {
     const getName = (user) => {
-        // if (user == null || user.first_name == null)
-        //     return "Друже"
-        // return fetchedUser.first_name
-        return "Приятель"
+        if (user == null || user.first_name == null)
+            return "Приятель"
+        return fetchedUser.first_name
     }
 
     return (

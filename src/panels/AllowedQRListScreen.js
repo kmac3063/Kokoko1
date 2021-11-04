@@ -25,7 +25,7 @@ const AllowedQRListScreen = ({id, go, fetchedUser, codeList, allowedList}) => {
             console.log("codeType: " + typeof(code.text))
             let b = false
             for (let allowedCode of allowedList) {
-                if (code.text.toLowerCase().includes(allowedCode.text.toLowerCase())) {
+                if (code.text.includes(allowedCode.text)) {
                     b = true
                     break
                 }
@@ -42,7 +42,7 @@ const AllowedQRListScreen = ({id, go, fetchedUser, codeList, allowedList}) => {
         for (let code of codeList) {
             let b = false
             for (let allowedCode of allowedList) {
-                if (code.text.toLowerCase().includes(allowedCode.text.toLowerCase())) {
+                if (code.text.includes(allowedCode.text)) {
                     b = true
                     break
                 }
@@ -68,14 +68,14 @@ const AllowedQRListScreen = ({id, go, fetchedUser, codeList, allowedList}) => {
         <Group header={<Header>Разрешенные коды</Header>}>
             <List>
                 {getAllowedList().map((code) =>
-                    <Cell key={code.id}>{code.text}</Cell>
+                    <Cell multiline key={code.id}>{code.text}</Cell>
                 )}
             </List>
         </Group>
         <Group header={<Header>Неразрешенные коды</Header>}>
             <List>
                 {getNotAllowedList().map((code) =>
-                    <Cell key={code.id}>{code.text}</Cell>
+                    <Cell multiline key={code.id}>{code.text}</Cell>
                 )}
             </List>
         </Group>
